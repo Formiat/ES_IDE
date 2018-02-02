@@ -5,8 +5,7 @@
 
 NewProjectDialog::NewProjectDialog(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::NewProjectDialog),
-    dialogClosed(false)
+    ui(new Ui::NewProjectDialog)
 {
     ui->setupUi(this);
 }
@@ -26,24 +25,9 @@ QString NewProjectDialog::getNewProjectFolder() const
     return ui->newProjectFolderEdit->text();
 }
 
-bool NewProjectDialog::isClosed() const
-{
-    return dialogClosed;
-}
-
 void NewProjectDialog::on_pushButton_clicked()
 {
-    QString path = QFileDialog().getExistingDirectory();
+    QString path = QFileDialog::getExistingDirectory(this, tr("New Project"));
     if (path.isNull()) return;
     ui->newProjectFolderEdit->setText(path);
-}
-
-void NewProjectDialog::on_buttonBox_accepted()
-{
-    dialogClosed = true;
-}
-
-void NewProjectDialog::on_buttonBox_rejected()
-{
-    dialogClosed = true;
 }

@@ -1,3 +1,5 @@
+//#define QT_NO_CAST_FROM_ASCII
+
 #include "mainwindow.h"
 #include <QApplication>
 

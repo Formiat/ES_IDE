@@ -38,4 +38,5 @@ FORMS += \
         mainwindow.ui \
     newprojectdialog.ui
 
+#TRANSLATIONS += ES_IDE_ru.ts
 

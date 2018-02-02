@@ -18,19 +18,13 @@ public:
 public:
     QString getNewProjectName() const;
     QString getNewProjectFolder() const;
-    bool isClosed() const;
     
 private slots:
     void on_pushButton_clicked();
     
-    void on_buttonBox_accepted();
-    
-    void on_buttonBox_rejected();
-    
 private:
     Ui::NewProjectDialog *ui;
     
-    bool dialogClosed;
 };
 
 #endif // NEWPROJECTDIALOG_H

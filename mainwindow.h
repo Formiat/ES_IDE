@@ -23,6 +23,10 @@ private:
     Ui::MainWindow *ui;
     
     Project *proj;
+    QString windowTitle;
+    
+private:
+    void closeEvent(QCloseEvent *event);
     
 private slots:
     void onProjectOpened();
@@ -35,6 +39,7 @@ private slots:
     void on_actionSave_Project_triggered();
     void on_actionClose_Project_triggered();
     void on_actionExit_triggered();
+    void on_actionAbout_triggered();
     
     void on_varList_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
     void on_valueList_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
@@ -47,6 +52,21 @@ private slots:
     
     void on_deleteVarButton_clicked();
     void on_deleteValueButton_clicked();
+    
+    void on_ruleList_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
+    void on_addRuleButton_clicked();
+    void on_deleteRuleButton_clicked();
+    
+    void on_varIfComboBox_currentIndexChanged(const QString &arg1);
+    void on_valueIfComboBox_currentIndexChanged(const QString &arg1);
+    void on_backspaceIfButton_clicked();
+    void on_enterIfButton_clicked();
+    
+    void on_varThenComboBox_currentIndexChanged(const QString &arg1);
+    void on_valueThenComboBox_currentIndexChanged(const QString &arg1);
+    void on_backspaceThenButton_clicked();
+    void on_enterThenButton_clicked();
+    
 };
 
 #endif // MAINWINDOW_H
