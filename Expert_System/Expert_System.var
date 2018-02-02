@@ -1,0 +1,15 @@
+Speed.Slow.Medium.Fast
+_internal_Weather.Bad.Medium.Good
+Pavement_Quality.Bad.Medium.Good
+Speed_Upper_Limit.Slow.Medium.Fast.No_Limit
+Tire_Condition.Bad.Medium.Good
+Distance_To_Front_Vehicle.Short.Medium.Long
+Approach_To_Front_Vehicle_Speed.Negative.No_Approach.Slow.Medium.Fast
+Weather.Clear.Rain.Snow.Ice_Crust
+Wind_Speed.Low.Medium.High
+_output_Action_1.No_Action.Stop.Slow_Down.Accelerate
+Speed_Lower_Limit.Slow.Medium.Fast.No_Limit
+Fuel_Amount.Little.Medium.A_Lot
+Required_Fuel_Amount.Little.Medium.A_Lot
+_output_Action_2.No_Action.Non_Urgent_Refuel.Urgent_Refuel.Change_Tires
+_internal_Road_And_Tires_Condition.Bad.Medium.Good
