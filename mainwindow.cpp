@@ -10,7 +10,8 @@
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow)
+    ui(new Ui::MainWindow),
+    proj(nullptr)
 {
     ui->setupUi(this);
     
@@ -20,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete proj;
+    //delete interpWindow;
     delete ui;
 }
 
@@ -46,9 +48,7 @@ void MainWindow::onProjectOpened()
     
     ui->actionSave_Project->setEnabled(true);
     ui->actionClose_Project->setEnabled(true);
-    ui->actionCheck->setEnabled(true);
     ui->actionInterpret->setEnabled(true);
-    ui->actionGenerate_Source_Code->setEnabled(true);
     ui->tabWidget->setEnabled(true);
     
     ui->varList->addItems(proj->getVarNames());
@@ -71,9 +71,7 @@ void MainWindow::onProjectClosed()
     
     ui->actionSave_Project->setDisabled(true);
     ui->actionClose_Project->setDisabled(true);
-    ui->actionCheck->setDisabled(true);
     ui->actionInterpret->setDisabled(true);
-    ui->actionGenerate_Source_Code->setDisabled(true);
     ui->tabWidget->setDisabled(true);
     
     ui->varErrorsEdit->clear();
@@ -160,6 +158,12 @@ void MainWindow::on_actionClose_Project_triggered()
 void MainWindow::on_actionExit_triggered()
 {
     close();
+}
+
+void MainWindow::on_actionInterpret_triggered()
+{
+    interpWindow = new InterpreterWindow(*proj);
+    interpWindow->show();
 }
 
 void MainWindow::on_actionAbout_triggered()

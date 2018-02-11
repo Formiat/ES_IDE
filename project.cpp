@@ -50,7 +50,7 @@ Pair::Pair()
     
 }
 
-Pair::Pair(const QString &l, const QString &r) : l(l), r(r)
+Pair::Pair(const QString &var, const QString &value) : var(var), value(value)
 {
     
 }
@@ -74,9 +74,9 @@ QString Rule::stringifyIfBlock() const
     {
         for (int i = 0; i < last; i++)
         {
-            result.append("(" + ifBlock.at(i).l + " == " + ifBlock.at(i).r + ")" + " & ");
+            result.append(ifBlock.at(i).stringify(true) + " & ");
         }
-        result.append("(" + ifBlock.at(last).l + " == " + ifBlock.at(last).r + ")");
+        result.append(ifBlock.at(last).stringify(true));
     }
     
     return result;
@@ -91,9 +91,9 @@ QString Rule::stringifyThenBlock() const
     {
         for (int i = 0; i < last; i++)
         {
-            result.append("(" + thenBlock.at(i).l + " <= " + thenBlock.at(i).r + ")" + "; ");
+            result.append(thenBlock.at(i).stringify(false) + "; ");
         }
-        result.append("(" + thenBlock.at(last).l + " <= " + thenBlock.at(last).r + ")" + ".");
+        result.append(thenBlock.at(last).stringify(false) + ".");
     }
     
     return result;
@@ -245,9 +245,9 @@ void Project::saveProject() const
         {
             for (int j = 0; j < last; j++)
             {
-                rulFileStream << rules.at(i).ifBlock.at(j).l + "=" + rules.at(i).ifBlock.at(j).r + "&";
+                rulFileStream << rules.at(i).ifBlock.at(j).var + "=" + rules.at(i).ifBlock.at(j).value + "&";
             }
-            rulFileStream << rules.at(i).ifBlock.at(last).l + "=" + rules.at(i).ifBlock.at(last).r;
+            rulFileStream << rules.at(i).ifBlock.at(last).var + "=" + rules.at(i).ifBlock.at(last).value;
         }
         rulFileStream << "-";
         
@@ -257,9 +257,9 @@ void Project::saveProject() const
         {
             for (int j = 0; j < last; j++)
             {
-                rulFileStream << rules.at(i).thenBlock.at(j).l + "=" + rules.at(i).thenBlock.at(j).r + "&";
+                rulFileStream << rules.at(i).thenBlock.at(j).var + "=" + rules.at(i).thenBlock.at(j).value + "&";
             }
-            rulFileStream << rules.at(i).thenBlock.at(last).l + "=" + rules.at(i).thenBlock.at(last).r;
+            rulFileStream << rules.at(i).thenBlock.at(last).var + "=" + rules.at(i).thenBlock.at(last).value;
         }
         rulFileStream << "\n";
         
@@ -280,7 +280,7 @@ const QStringList &Project::getVarNames() const
     return varNames;
 }
 
-const QList<QStringList> &Project::getVarValues() const
+const QList<QStringList> &Project::getAllVarValues() const
 {
     return varValues;
 }
@@ -333,7 +333,7 @@ QString Project::getRuleStringified(int ruleId) const
 {
     normalizeRuleId(&ruleId);
     if (!ruleExists(ruleId)) return QString();
-    return QString(zeros(ruleId + 1, rules.length() + 1) + QString::number(ruleId + 1) + ") " + rules.at(ruleId).stringify());
+    return QString(zeros(ruleId + 1, rules.length()) + QString::number(ruleId + 1) + ") " + rules.at(ruleId).stringify());
 }
 
 QString Project::getRuleStringified(const QString &ruleStringified) const

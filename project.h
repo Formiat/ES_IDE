@@ -50,22 +50,33 @@ private:
 struct Pair
 {
     Pair();
-    Pair(const QString &l, const QString &r);
+    Pair(const QString &var, const QString &value);
     
-    inline bool operator==(const Pair &pair) const { return (l == pair.l && r == pair.r); }
+    inline QString stringify(bool ifBlock, int indent = 0, bool parentheses = true) const
+    {
+        QString result((parentheses ? "(" : "") + var);
+        for (int i = 0; i < indent; i++)
+        {
+            result.append(" ");
+        }
+        result.append(QString(" ") + (ifBlock ? "=" : "<") + "= " + value + (parentheses ? ")" : ""));
+        return result;
+    }
     
-    QString l; // Variable name
-    QString r; // Variable value
+    inline bool operator==(const Pair &pair) const { return (var == pair.var && value == pair.value); }
+    
+    QString var;
+    QString value;
 };
 
 struct Rule
 {
-    QList<Pair> ifBlock;
-    QList<Pair> thenBlock;
-    
     QString stringify() const;
     QString stringifyIfBlock() const;
     QString stringifyThenBlock() const;
+
+    QList<Pair> ifBlock;
+    QList<Pair> thenBlock;
 };
 
 class Project
@@ -85,7 +96,7 @@ public:
     
     const QString &getProjName() const;
     const QStringList &getVarNames() const;
-    const QList<QStringList> &getVarValues() const;
+    const QList<QStringList> &getAllVarValues() const;
     
     // Returns "nullptr" if some errors occurred
     // "-1" means last added Variable Name

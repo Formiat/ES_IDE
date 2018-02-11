@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include "project.h"
+#include "interpreterwindow.h"
 
 #include <QMainWindow>
 
@@ -23,7 +24,10 @@ private:
     Ui::MainWindow *ui;
     
     Project *proj;
+    InterpreterWindow *interpWindow;
     QString windowTitle;
+    
+    QMap<QString, QString> inputValues;
     
 private:
     void closeEvent(QCloseEvent *event);
@@ -39,6 +43,9 @@ private slots:
     void on_actionSave_Project_triggered();
     void on_actionClose_Project_triggered();
     void on_actionExit_triggered();
+    
+    void on_actionInterpret_triggered();
+    
     void on_actionAbout_triggered();
     
     void on_varList_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);

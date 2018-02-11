@@ -27,16 +27,24 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     project.cpp \
-    newprojectdialog.cpp
+    newprojectdialog.cpp \
+    interpreter.cpp \
+    interpreterwindow.cpp \
+    resultwindow.cpp
 
 HEADERS += \
         mainwindow.h \
     project.h \
-    newprojectdialog.h
+    newprojectdialog.h \
+    interpreter.h \
+    interpreterwindow.h \
+    resultwindow.h
 
 FORMS += \
         mainwindow.ui \
-    newprojectdialog.ui
+    newprojectdialog.ui \
+    interpreterwindow.ui \
+    resultwindow.ui
 
 #TRANSLATIONS += ES_IDE_ru.ts
 

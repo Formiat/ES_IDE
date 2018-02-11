@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>InterpreterWindow</class>
+ <widget class="QWidget" name="InterpreterWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>990</width>
+    <height>535</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>990</width>
+    <height>535</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>990</width>
+    <height>535</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Interpreter</string>
+  </property>
+  <widget class="QLabel" name="label_15">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>8</y>
+     <width>161</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Variables and Values</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="varComboBox">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>360</y>
+     <width>381</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Monospace</family>
+    </font>
+   </property>
+   <property name="insertPolicy">
+    <enum>QComboBox::InsertAlphabetically</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_18">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>340</y>
+     <width>161</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Variable Values</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="valueComboBox">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>360</y>
+     <width>381</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Monospace</family>
+    </font>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_19">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>400</y>
+     <width>111</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Errors</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_16">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>360</y>
+     <width>41</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>&lt;=</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="interpretButton">
+   <property name="geometry">
+    <rect>
+     <x>850</x>
+     <y>490</y>
+     <width>111</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Interpret</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="enterButton">
+   <property name="geometry">
+    <rect>
+     <x>850</x>
+     <y>360</y>
+     <width>111</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Enter</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_17">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>340</y>
+     <width>161</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Variables</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="errorsEdit">
+   <property name="geometry">
+    <rect>
+     <x>19</x>
+     <y>419</y>
+     <width>951</width>
+     <height>35</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="varsAndValuesList">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>28</y>
+     <width>951</width>
+     <height>291</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Monospace</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="sortingEnabled">
+    <bool>true</bool>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

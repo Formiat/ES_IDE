@@ -398,6 +398,9 @@
            <family>Monospace</family>
           </font>
          </property>
+         <property name="insertPolicy">
+          <enum>QComboBox::InsertAlphabetically</enum>
+         </property>
         </widget>
         <widget class="QComboBox" name="valueIfComboBox">
          <property name="geometry">
@@ -540,6 +543,9 @@
           <font>
            <family>Monospace</family>
           </font>
+         </property>
+         <property name="insertPolicy">
+          <enum>QComboBox::InsertAlphabetically</enum>
          </property>
         </widget>
         <widget class="QComboBox" name="valueThenComboBox">
@@ -684,35 +690,20 @@
     <addaction name="separator"/>
     <addaction name="actionExit"/>
    </widget>
-   <widget class="QMenu" name="menuBuild">
-    <property name="locale">
-     <locale language="English" country="UnitedStates"/>
-    </property>
-    <property name="title">
-     <string>Build</string>
-    </property>
-    <addaction name="actionCheck"/>
-    <addaction name="actionInterpret"/>
-    <addaction name="actionGenerate_Source_Code"/>
-   </widget>
-   <widget class="QMenu" name="menuTools">
-    <property name="locale">
-     <locale language="English" country="UnitedStates"/>
-    </property>
-    <property name="title">
-     <string>Tools</string>
-    </property>
-    <addaction name="actionSettings"/>
-   </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
      <string>Help</string>
     </property>
     <addaction name="actionAbout"/>
    </widget>
+   <widget class="QMenu" name="menuBuild">
+    <property name="title">
+     <string>Build</string>
+    </property>
+    <addaction name="actionInterpret"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuBuild"/>
-   <addaction name="menuTools"/>
    <addaction name="menuHelp"/>
   </widget>
   <action name="actionOpen_Project">
@@ -730,21 +721,6 @@
     <string>Exit</string>
    </property>
   </action>
-  <action name="actionCheck">
-   <property name="text">
-    <string>Check</string>
-   </property>
-  </action>
-  <action name="actionInterpret">
-   <property name="text">
-    <string>Interpret</string>
-   </property>
-  </action>
-  <action name="actionGenerate_Source_Code">
-   <property name="text">
-    <string>Generate Source Code</string>
-   </property>
-  </action>
   <action name="actionSave_Project">
    <property name="text">
     <string>Save Project</string>
@@ -755,14 +731,14 @@
     <string>New Project</string>
    </property>
   </action>
-  <action name="actionSettings">
-   <property name="text">
-    <string>Settings</string>
-   </property>
-  </action>
   <action name="actionAbout">
    <property name="text">
     <string>About</string>
+   </property>
+  </action>
+  <action name="actionInterpret">
+   <property name="text">
+    <string>Interpret</string>
    </property>
   </action>
  </widget>
