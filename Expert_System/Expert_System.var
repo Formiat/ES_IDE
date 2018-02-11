@@ -7,9 +7,13 @@ Distance_To_Front_Vehicle.Short.Medium.Long
 Approach_To_Front_Vehicle_Speed.Negative.No_Approach.Slow.Medium.Fast
 Weather.Clear.Rain.Snow.Ice_Crust
 Wind_Speed.Low.Medium.High
-_output_Action_1.No_Action.Stop.Slow_Down.Accelerate
+_output_Action_1.No_Action.Stop.Slow_Down.Urgent_Slow_Down.Accelerate
 Speed_Lower_Limit.Slow.Medium.Fast.No_Limit
 Fuel_Amount.Little.Medium.A_Lot
 Required_Fuel_Amount.Little.Medium.A_Lot
-_output_Action_2.No_Action.Non_Urgent_Refuel.Urgent_Refuel.Change_Tires
+_output_Action_2.No_Action.Change_Tires
+_output_Action_3.No_Action.Non_Urgent_Refuel.Urgent_Refuel
 _internal_Road_And_Tires_Condition.Bad.Medium.Good
+_internal_Ambience_1.Bad.Medium.Good
+_internal_Ambience_2.Bad.Medium.Good
+_internal_Ambience_3.Bad.Medium.Good
